@@ -1,6 +1,6 @@
 # leaderboard
 
-[POSTMANCOLLECTION](collections/Leaderboard%Collection.postman_collection.json)
+The postman collection can be found [HERE](collections/leaderboard_collection.json)
 
 
 ## To deploy the project (Locally):<br>
