@@ -1,4 +1,7 @@
 # leaderboard
+A simple leaderboard backend application
+
+Technologies used, Java, MySQL, Redis and RabbitMQ
 
 The postman collection can be found [HERE](collection/leaderboard_collection.json)
 
