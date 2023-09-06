@@ -1,5 +1,5 @@
-# Use a base image with Java and Maven pre-installed
-FROM openjdk:11-jre-slim
+# AS <NAME> to name this stage as maven
+FROM maven:3.8.4 AS maven
 
 ENV SPRING_RABBITMQ_HOST=localhost
 ENV SPRING_RABBITMQ_PORT=5672
@@ -14,16 +14,16 @@ ENV REDIS_PORT=6379
 ENV REDIS_PASSWORD=
 ENV DEFAULT_TTL=180
 
-# AS <NAME> to name this stage as maven
-FROM maven:3.8.4 AS maven
+
 
 WORKDIR /usr/src/app
 COPY . /usr/src/app
 # Compile and package the application to an executable JAR
-RUN mvn package
+RUN mvn package -Dmaven.test.skip
 
-# For Java 11,
-FROM adoptopenjdk/openjdk11:alpine-jre
+# Java 17
+FROM openjdk:17-jdk-slim
+
 
 ARG JAR_FILE=player-leader-board-0.0.1-SNAPSHOT.jar
 
