@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "f0e263d1-95cc-407c-95db-966372e4c94d",
+		"name": "Leaderboard Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12262850"
+	},
+	"item": [
+		{
+			"name": "Add Player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Antony Elanga\",\n    \"score\":0,\n    \"playerInfo\": \"5 foot 9\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/players",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateScore",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"score\":50\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/players/1/score",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"players",
+						"1",
+						"score"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Leaderboard",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"score\":50\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/leaderboard/top/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"leaderboard",
+						"top",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Player Rank",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"score\":50\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/players/3/rank",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"players",
+						"3",
+						"rank"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
