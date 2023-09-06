@@ -12,31 +12,28 @@
   -  Then once the image has finished building
 
    ```
-   docker-compose build
+   docker-compose up
    ```
    
  - Wait for the image to build and run on port 8080
 
 ## Project Endpoints:<br>
   ```
- http://127.0.0.1:8080/players
+ POST http://127.0.0.1:8080/players
  ```
-   Returns a webpage with all customers (zero filters)
+   For updating players, accepts a player object
   ```
-  http://127.0.0.1:8080/customers?country={Country}
+ PUT http://127.0.0.1:8080/players{id}/score
    ```
-   Returns a webpage with all customers filtered by the specified country e.g ```127.0.0.1:8080/customers?country=Morocco```<br>
-   Options include: Cameroon,Ethiopia,Morocco,Mozambique, Uganda
+   Accepts a score and updates it to the player specified on the id
    ```
-  http://127.0.0.1:8080/customers?state={State}
+ GET http://127.0.0.1:8080/leaderboard/top/{n}
    ```
-   Returns a webpage with all customers filtered by the specified state e.g  ```127.0.0.1:8080/customers?state=VALID```<br>
-   Options include: VALID,INVALID
+   Returns the top n players based on score
    
    ```
-  http://127.0.0.1:8080/customers?state={State}&country={Country}
+  GET ttp://127.0.0.1:8080/players/{id}/rank
    ```
-   Returns a webpage with all customers filtered by the specified state and country e.g  ```127.0.0.1:8080/customers?country=Morocco&state=VALID```
-   
+  Returns the rank of the specified player
 
 
