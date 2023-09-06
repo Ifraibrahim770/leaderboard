@@ -7,8 +7,14 @@
  - Open a terminal session using Windows Terminal, GitBash or any other CLI tool 
  - Run the command:<br>
    ```
-   docker-compose up
-   ``` 
+   docker-compose build
+   ```
+  -  Then once the image has finished building
+
+   ```
+   docker-compose build
+   ```
+   
  - Wait for the image to build and run on port 8080
 
 ## Project Endpoints:<br>
