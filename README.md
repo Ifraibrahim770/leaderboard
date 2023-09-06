@@ -1,5 +1,7 @@
 # leaderboard
 
+[POSTMANCOLLECTION](collections/Leaderboard%Collection.postman_collection.json)
+
 
 ## To deploy the project (Locally):<br>
  - Install Docker (get it from [HERE](https://docs.docker.com/get-docker/):  and make sure its added to the PATH
