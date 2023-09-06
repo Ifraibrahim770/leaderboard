@@ -8,6 +8,8 @@ services:
     ports:
       - "15672:15672"  # RabbitMQ management console
       - "5672:5672"    # RabbitMQ default port
+    networks:
+      - my-net
 
   mysql:
     image: "mysql:latest"
@@ -18,11 +20,16 @@ services:
       MYSQL_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
     ports:
       - "3306:3306"
+    networks:
+      - my-net
 
   redis:
     image: "redis:latest"
     ports:
       - "6379:6379"
+      
+    networks:
+      - my-net
 
   spring-app:
     build:
@@ -30,3 +37,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    depends_on:
+      - redis
+      - rabbitmq
+      - mysql
+    env_file: .env
+    
+    networks:
+      - my-net
+    
+    
+networks:
+    my-net:
+      driver: bridge
